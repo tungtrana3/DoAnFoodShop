@@ -98,5 +98,6 @@ namespace DoAnVegeFoody.App_Code
             _UserName = sUserName;
             _Modified = dtModified;
         }
+        public clsFoodType(){}
     }
 }

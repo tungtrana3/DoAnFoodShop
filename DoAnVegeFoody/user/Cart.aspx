@@ -30,53 +30,39 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-center">
-                                    <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+                                <asp:Repeater ID="Repeater_Cart" OnItemCommand="Repeater_Cart_ItemCommand" runat="server">
+                                    <ItemTemplate>
+                                        <tr class="text-center">
+                                            <td class="product-remove">
+                                            <asp:LinkButton ID="btn_remove" CssClass="d-flex justify-content-center align-items-center text-center" CommandName="remove" OnClick="btn_remove_Click" CausesValidation="true" runat="server">
+                                                <span class="ion-ios-close">
+                                            </asp:LinkButton></td>
+                                            <%--<td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>--%>
 
-                                    <td class="image-prod">
-                                        <div class="img" style="background-image: url(images/product-3.jpg);"></div>
-                                    </td>
+                                            <td class="image-prod">
+                                                <div class="img" style="background-image: url(images/<%# Eval("img") %>);"></div>
+                                            </td>
 
-                                    <td class="product-name">
-                                        <h3>Bell Pepper</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries</p>
-                                    </td>
+                                            <td class="product-name">
+                                                <h3><%# Eval("name") %></h3>
+                                                <p><%# Eval("description") %></p>
+                                            </td>
 
-                                    <td class="price">$4.90</td>
+                                            <td class="price">$<%# Eval("price") %></td>
 
-                                    <td class="quantity">
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                        </div>
-                                    </td>
+                                            <td class="quantity">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                                                </div>
+                                            </td>
 
-                                    <td class="total">$4.90</td>
-                                </tr>
-                                <!-- END TR-->
+                                            <td class="total">$15.70</td>
+                                        </tr>
+                                        <!-- END TR-->
+                                        <asp:HiddenField ID="id" runat="server" Value='<%# Eval("id") %>' />
+                                    </ItemTemplate>
+                                </asp:Repeater>
 
-                                <tr class="text-center">
-                                    <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-
-                                    <td class="image-prod">
-                                        <div class="img" style="background-image: url(images/product-4.jpg);"></div>
-                                    </td>
-
-                                    <td class="product-name">
-                                        <h3>Bell Pepper</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries</p>
-                                    </td>
-
-                                    <td class="price">$15.70</td>
-
-                                    <td class="quantity">
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                        </div>
-                                    </td>
-
-                                    <td class="total">$15.70</td>
-                                </tr>
-                                <!-- END TR-->
                             </tbody>
                         </table>
                     </div>
@@ -94,7 +80,9 @@
                             </div>
                         </form>
                     </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
+                    <p>
+                        
+                        <a href="checkout.aspx" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
                 </div>
                 <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
                     <div class="cart-total mb-3">
@@ -115,7 +103,7 @@
                             </div>
                         </form>
                     </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>
+                    <p><a href="checkout.aspx" class="btn btn-primary py-3 px-4">Estimate</a></p>
                 </div>
                 <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
                     <div class="cart-total mb-3">
@@ -138,7 +126,8 @@
                             <span>$17.60</span>
                         </p>
                     </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+                    <p>
+                        <asp:LinkButton ID="btn_checkout" CssClass="btn btn-primary py-3 px-4" CommandName="checkout" OnClick="btn_checkout_Click" CausesValidation="true" runat="server"></asp:LinkButton>
                 </div>
             </div>
         </div>

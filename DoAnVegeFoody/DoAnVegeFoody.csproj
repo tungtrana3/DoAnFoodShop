@@ -67,6 +67,32 @@
     <Content Include="admin\DanhSachSanPham.aspx" />
     <Content Include="admin\Food.aspx" />
     <Content Include="admin\FoodType.aspx" />
+    <Content Include="admin\img\about.jpg" />
+    <Content Include="admin\img\bg_1.jpg" />
+    <Content Include="admin\img\bg_2.jpg" />
+    <Content Include="admin\img\bg_3.jpg" />
+    <Content Include="admin\img\category-1.jpg" />
+    <Content Include="admin\img\category-2.jpg" />
+    <Content Include="admin\img\category-3.jpg" />
+    <Content Include="admin\img\category-4.jpg" />
+    <Content Include="admin\img\image_1.jpg" />
+    <Content Include="admin\img\image_2.jpg" />
+    <Content Include="admin\img\image_3.jpg" />
+    <Content Include="admin\img\image_4.jpg" />
+    <Content Include="admin\img\image_5.jpg" />
+    <Content Include="admin\img\image_6.jpg" />
+    <Content Include="admin\img\product-1.jpg" />
+    <Content Include="admin\img\product-10.jpg" />
+    <Content Include="admin\img\product-11.jpg" />
+    <Content Include="admin\img\product-12.jpg" />
+    <Content Include="admin\img\product-2.jpg" />
+    <Content Include="admin\img\product-3.jpg" />
+    <Content Include="admin\img\product-4.jpg" />
+    <Content Include="admin\img\product-5.jpg" />
+    <Content Include="admin\img\product-6.jpg" />
+    <Content Include="admin\img\product-7.jpg" />
+    <Content Include="admin\img\product-8.jpg" />
+    <Content Include="admin\img\product-9.jpg" />
     <Content Include="admin\LICENSE" />
     <Content Include="admin\README.md" />
     <Content Include="admin\vendor\bootstrap\js\bootstrap.bundle.js.map" />
@@ -218,6 +244,7 @@
     <Content Include="Login.Master" />
     <Content Include="User.Master" />
     <Content Include="user\Cart.aspx" />
+    <Content Include="user\Checkout.aspx" />
     <Content Include="user\css\ajax-loader.gif" />
     <Content Include="user\css\animate.css" />
     <Content Include="user\css\aos.css" />
@@ -378,7 +405,6 @@
     <Content Include="admin\css\sb-admin-2.min.css" />
     <Content Include="admin\forgot-password.html" />
     <Content Include="admin\gulpfile.js" />
-    <Content Include="admin\img\undraw_posting_photo.svg" />
     <Content Include="admin\index.html" />
     <Content Include="admin\js\demo\chart-area-demo.js" />
     <Content Include="admin\js\demo\chart-bar-demo.js" />
@@ -2134,6 +2160,13 @@
     </Compile>
     <Compile Include="user\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

@@ -56,7 +56,7 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Vegefoods</a>
+                <a class="navbar-brand" href="index.aspx">Vegefoods</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span>Menu
 	     
@@ -64,7 +64,7 @@
 
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item active"><a href="index.aspx" class="nav-link">Home</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -175,7 +175,7 @@
                 <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
             </svg></div>
 
-
+        <asp:ContentPlaceHolder ID="script" runat="server"></asp:ContentPlaceHolder>
         <script src="<%=Page.ResolveUrl("~/User/") %>js/jquery.min.js"></script>
         <script src="<%=Page.ResolveUrl("~/User/") %>js/jquery-migrate-3.0.1.min.js"></script>
         <script src="<%=Page.ResolveUrl("~/User/") %>js/popper.min.js"></script>

@@ -4,6 +4,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main_container" runat="server">
     <div>
+        <div class="form-group form-inline">
+            <div class="col-lg-8 col-sm-6 mb-3 mb-sm-0">
+                <asp:Label ID="Label1" runat="server" Text="Nhập tên member:" ForeColor="Black"></asp:Label>
+                <asp:TextBox ID="txtkey" CssClass="form-control" runat="server">           
+                </asp:TextBox>
+                <asp:Button ID="btnSearch" CssClass="btn btn-outline-success" runat="server" Text="Tìm Kiếm" OnClick="btnSearch_Click" />
+            </div>
+        </div>
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Danh sách thành viên</h1>
         <div  runat="server" id="txtResult"></div>
@@ -60,7 +68,14 @@
                 </div>
             </div>
         </div>
-
+        <asp:Repeater ID="Repeater2" runat="server">
+            <ItemTemplate>
+                <a href="?page=<%#Eval("index")%> <%if (Request["key"] != null)
+                                                        Response.Write("&key=" + Request["key"]); %>
+                          <% if (Request["id"] != null) Response.Write("&id=" + Request["id"]); %>"
+                    style="background-color: blue <%# (Eval("active").ToString()=="1"?"blue":"white")%>"><%#Eval("index") %></a>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="script" runat="server">

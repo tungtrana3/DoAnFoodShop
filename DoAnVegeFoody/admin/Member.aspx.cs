@@ -50,30 +50,47 @@ namespace DoAnVegeFoody
             int iRole = Convert.ToInt32(exampleRole.SelectedValue);
             int iStatus = Convert.ToInt32(exampleStatus.SelectedValue);
 
-            Account acc = new Account(sUsername, sName, sPass, sPhone, iRole, iStatus, sEmail);
-
-            if (Request["update"] != null)
+            if (CheckExits(sName) == 1)
             {
-                if (acc.UpdateMember() == true)
-                {
-                    txtResult.InnerHtml = "Cập nhật thành công";
-                }
-                else
-                {
-                    txtResult.InnerHtml = "Cập nhật đã tồn tại";
-                }
+                txt_username.Text = "Tên người dùng đã tồn tại!";
             }
             else
             {
-                if (acc.AddMember() == true)
+                Account acc = new Account(sUsername, sName, sPass, sPhone, iRole, iStatus, sEmail);
+
+                if (Request["update"] != null)
                 {
-                    txtResult.InnerHtml = "Thêm mới thành công";
+                    if (acc.UpdateMember() == true)
+                    {
+                        txtResult.InnerHtml = "Cập nhật thành công";
+                    }
+                    else
+                    {
+                        txtResult.InnerHtml = "Cập nhật đã tồn tại";
+                    }
                 }
                 else
                 {
-                    txtResult.InnerHtml = "Thêm mới đã tồn tại";
+                    if (acc.AddMember() == true)
+                    {
+                        txtResult.InnerHtml = "Thêm mới thành công";
+                    }
+                    else
+                    {
+                        txtResult.InnerHtml = "Thêm mới đã tồn tại";
+                    }
                 }
             }
+            
         }
+        protected int CheckExits(string name){
+            string sQuery = "select username from member where username = '" + name + "'";
+            DataTable dt = DataProvider.getDataTable(sQuery);
+            if (dt != null)
+            {
+                return 1;
+            }
+            return -1;
+    }
     }
 }

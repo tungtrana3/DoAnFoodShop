@@ -13,9 +13,9 @@
                 <div runat="server" id="txtResult"></div>
                 <div class="form-group row">
                     <div class="col-lg-4 col-sm-6 mb-3 mb-sm-0">
-                        <%-- <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">--%>
                         <asp:TextBox ID="exampleUserName" CssClass="form-control form-control-user" placeholder="User Name" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfv_us" runat="server" ErrorMessage="Tên người dùng không được để trống." ControlToValidate="exampleUserName"></asp:RequiredFieldValidator>
+                        <asp:Label ID="txt_username" runat="server" Text=""></asp:Label>
                     </div>
                     <div class=" col-lg-4 col-sm-6">
                         <asp:TextBox ID="exampleName" CssClass="form-control form-control-user" placeholder="Name" runat="server"></asp:TextBox>

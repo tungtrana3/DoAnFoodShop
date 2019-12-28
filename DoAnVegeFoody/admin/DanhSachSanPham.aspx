@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="form-group form-inline">
             <div class="col-lg-8 col-sm-6 mb-3 mb-sm-0">
-                <asp:Label ID="Label1" runat="server" Text="Nhập từ khóa:" ForeColor="Black"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Nhập tên sản phẩm:" ForeColor="Black"></asp:Label>
                 <asp:TextBox ID="txtkey" CssClass="form-control" runat="server">           
                 </asp:TextBox>
                 <asp:Button ID="btnSearch" CssClass="btn btn-outline-success" runat="server" Text="Tìm Kiếm" OnClick="btnSearch_Click" />
